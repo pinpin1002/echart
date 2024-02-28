@@ -164,10 +164,10 @@ const heatMapoption = ref({
 		position: "top",
 	},
 	grid: {
-		height: "50%",
-		width: "50%",
+		height: "60%",
+		width: "60%",
 		left: "center",
-		bottom: "center",
+		bottom: "0",
 	},
 	yAxis: {
 		type: "category",
@@ -188,12 +188,20 @@ const heatMapoption = ref({
 		},
 	},
 	visualMap: {
+		type: "piecewise",
+		splitNumber: 7,
+		itemHeight: 30,
+		itemWidth: 20,
+		itemSymbol: "rect",
+		itemGap: 5,
 		min: 0,
 		max: 1000,
 		calculable: true,
+		precision: 0,
 		orient: "vertical",
 		right: "0",
-		bottom: "center",
+		bottom: "0%",
+		formatter: function (value) {},
 	},
 	series: [
 		{
