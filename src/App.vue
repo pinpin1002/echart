@@ -11,7 +11,8 @@
 	</div> -->
 
 	<div class="container">
-		<v-chart class="chart" :option="heatMapoption" autoresize />
+		<!-- <v-chart class="chart" :option="heatMapoption" autoresize /> -->
+		<v-chart class="chart" :option="maleOption" autoresize />
 	</div>
 </template>
 
@@ -208,6 +209,45 @@ const heatMapoption = ref({
 			name: "View Count",
 			type: "heatmap",
 			data: data,
+		},
+	],
+});
+
+const maleOption = ref({
+	color: ["#ff0000", "#0000ff"],
+	tooltip: {
+		trigger: "axis",
+		axisPointer: {
+			type: "line",
+		},
+	},
+	xAxis: {
+		type: "category",
+		data: ["10", "20", "30", "40", "50", "60", "70", "80", "90"],
+		axisTick: { alignWithLabel: true },
+	},
+	yAxis: {
+		type: "value",
+		axisLine: {
+			show: true,
+		},
+		splitLine: { show: false },
+	},
+	series: [
+		{
+			name: "Female",
+			data: [50, 2000, 2900, 2500, 1800, 1500, 1000, 50, 50],
+
+			type: "line",
+			smooth: true,
+			showSymbol: false,
+		},
+		{
+			name: "Male",
+			data: [50, 1600, 1900, 1500, 1200, 1000, 900, 30, 30],
+			type: "line",
+			smooth: true,
+			showSymbol: false,
 		},
 	],
 });
