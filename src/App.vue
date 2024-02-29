@@ -214,7 +214,17 @@ const heatMapoption = ref({
 });
 
 const maleOption = ref({
-	color: ["#ff0000", "#0000ff"],
+	legend: {
+		data: [
+			{ name: "Male", icon: "rect" },
+			{ name: "Female", icon: "rect" },
+		],
+		bottom: 0,
+		left: 20,
+		align: "auto",
+		itemGap: 20,
+	},
+	color: ["#f8857d", "#4f8dea"],
 	tooltip: {
 		trigger: "axis",
 		axisPointer: {
@@ -236,7 +246,7 @@ const maleOption = ref({
 	series: [
 		{
 			name: "Female",
-			data: [50, 2000, 2900, 2500, 1800, 1500, 1000, 50, 50],
+			data: [50, 2000, 2900, 2500, 1800, 1500, 1000, 300, 300],
 
 			type: "line",
 			smooth: true,
@@ -244,7 +254,7 @@ const maleOption = ref({
 		},
 		{
 			name: "Male",
-			data: [50, 1600, 1900, 1500, 1200, 1000, 900, 30, 30],
+			data: [50, 1000, 1900, 1500, 1200, 1000, 500, 100, 100],
 			type: "line",
 			smooth: true,
 			showSymbol: false,
